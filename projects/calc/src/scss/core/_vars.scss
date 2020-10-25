@@ -1,0 +1,25 @@
+$font-main: 'Roboto', sans-serif;
+
+// Colors
+$yellow: #FFDC55;
+$font-color: #333333;
+$font-color-additional: #665822;
+$disabled-element: #E1C34B;
+$clothes-bg: #FEEDA9;
+$white: #ffffff;
+
+// Font Size
+@function px_to_rem($target, $context: $base-size) {
+    @if $target == 0 {
+      @return 0;
+    }
+  
+    @return $target / $context + 0rem;
+}
+  
+  $base-size: 16px;
+
+  $H25: px_to_rem(25px);
+  $H16: px_to_rem(16px);
+  $H14: px_to_rem(14px);
+  $H10: px_to_rem(10px);

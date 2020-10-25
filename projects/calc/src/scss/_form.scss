@@ -1,0 +1,408 @@
+.form {
+	
+
+	&-wrapper {}
+
+	&-fieldset-wrapper {
+		padding-top: 40px;
+		padding-bottom: 44px;
+		@include flex;
+		position: relative;
+
+		&:after {
+			content: '';
+			// display: inline-block;
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			height: 1px;
+			background-color: $disabled-element;
+			margin-top: 30px;
+			justify-self: flex-end;
+		}
+	}
+
+	&-fieldset {
+		flex: 1 1 50%;
+		max-width: 50%;
+
+		&-price {
+			padding-right: 60px;
+		}
+
+		&-kind-of-bees {
+			@include flex-col;
+			padding-left: 18px;
+		}
+
+		&-manufacturer {
+			padding-left: 18px;
+		}
+	}
+
+	&-legend {
+		@include text($H16);
+		margin-bottom: 25px;
+		
+		&-price {
+			margin-bottom: 35px;
+		}
+
+		&-clothes {
+			padding-left: 18px;
+		}
+	}
+
+	&-slider {
+
+	}
+
+	&-slider-prices {
+		margin-bottom: 44px;
+		@include flex(space-between, center);
+	}
+
+	&-slider-text {
+		@include text($H14, $color: $font-color-additional);
+		margin-right: 25px;
+		display: inline-block;
+	}
+
+	&-slider-value {
+		@include text($H14);
+		@include flex(flex-start, center);
+		padding: 0 15px;
+		width: 180px;
+		height: 40px;
+		background-color: $white;
+		margin-right: 35px;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	&-slider-bar {
+		max-width: 91%;
+		transform: translateX(6%);
+	}
+
+	&-checkbox-wrapper:not(:last-child) {
+		margin-bottom: 8px;
+	}
+
+	&-checkbox-input,
+	&-radio-input {
+		display: none;
+	}
+
+	&-checkbox-input:checked +.form-checkbox-label .form-checkbox-element svg {
+		display: block;
+	}
+
+	&-checkbox-input:checked +.form-checkbox-label {
+		color: $font-color;
+	}
+
+	&-checkbox-input:checked +.form-checkbox-label .form-checkbox-element {
+		border: none;
+		background-color: $white;
+	}
+
+	&-checkbox-label {
+		@include flex(center, center);
+		color: $disabled-element;
+		&:hover {
+			color: $font-color;
+			.form-checkbox-element {
+				background-color: $white;
+				border: none;
+			}
+		}
+	}
+
+	&-checkbox-element {
+		width: 20px;
+		height: 20px;
+		border: 2px solid $disabled-element;
+		background-color: transparent;
+		margin-right: 16px;
+		display: inline-block;
+
+		svg {
+			width: 19px;
+			height: 14px;
+			transform: translate(4px, 2px);
+			display: none;
+		}
+	}
+
+	&-radio-wrapper:not(:last-child) {
+		margin-bottom: 16px;
+	}
+
+	&-radio-label {
+		@include flex(flex-start, center);
+		// color: $disabled-element;
+		&:hover {
+			.form-radio-description {
+				svg {
+					fill: $font-color-additional;
+				}
+			}
+			.form-radio-element {
+				background-color: $white;
+				border: none;
+			}
+		}
+	}
+
+	&-radio-element {
+		margin-right: 18px;
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		border: 2px solid $disabled-element;
+		background-color: transparent;
+
+		svg {
+			display: none;
+			width: 19px;
+			height: 14px;
+			transform: translate(4px, 2px);
+		}
+	}
+
+	&-radio-description {
+		svg {
+			width: 90px;
+			height: 30px;
+			fill: $disabled-element;
+		}
+	}
+
+	&-radio-input:checked + .form-radio-label .form-radio-element {
+		background-color: $white;
+		border: none;
+	}
+
+	&-radio-input:checked + .form-radio-label .form-radio-description svg{
+		fill: $font-color-additional;
+	}
+
+	&-radio-input:checked + .form-radio-label .form-radio-element svg {
+		display: block;
+	}
+
+	&-type-of-clothing-wrapper {
+		@include flex;
+	}
+
+	&-type-of-clothing:not(:last-child) {
+		margin-right: 5px;
+	}
+
+	&-type-of-clothing {
+		width: 80px;
+		height: 80px;
+		@include flex(center, center);
+
+		svg {
+			fill: $font-color-additional;
+			height: 100%;
+		}
+
+		&-1 {
+			svg {
+				width: 62px;
+			}
+		}
+
+		&-2 {
+			svg {
+				width: 12px;
+			}
+		}
+
+		&-3 {
+			svg {
+				width: 33px;
+			}
+		}
+
+		&-4 {
+			svg {
+				width: 28px;
+			}
+		}
+
+		&-5 {
+			svg {
+				width: 58px;
+			}
+		}
+
+		&-6 {
+			svg {
+				width: 30px;
+			}
+		}
+	}
+
+	&-type-of-clothing-input {
+		display: none;
+	}
+
+	&-type-of-clothing-label {
+		width: 100%;
+		height: 100%;
+		@include flex(center, center);
+
+		&:hover {
+			background-color: $clothes-bg;
+		}
+	}
+
+	&-type-of-clothing-input:checked + .form-type-of-clothing-label {
+		background-color: $clothes-bg;
+	}
+
+	&-buttons-wrapper {
+		padding-top: 58px;
+		padding-bottom: 60px;
+		display: inline-flex;
+	}
+
+	&-button {
+		border: 2px solid $disabled-element;
+		min-height: 60px;
+		max-width: 180px;
+		padding: 0 35px 0;
+		@include flex(center, center);
+		@include text($H16, $color: $disabled-element);
+		
+		&:first-child {
+			margin-right: 106px; 
+		}
+
+		&:hover,
+		&:focus,
+		&:active {
+			border: 2px solid $font-color-additional;
+			color: $font-color-additional;
+		}
+	}
+
+	&-rating-area {
+		// width: 154px;
+		@include flex(flex-end);
+		flex-direction: row-reverse;
+	}
+
+	&-rating-input {
+		display: none;
+	}
+
+	&-rating-label {
+		margin-left: 4px;
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		svg {
+			width: 26px;
+			height: 26px;
+			fill: $disabled-element;
+		}
+
+		&:hover,
+		&:hover ~ label {
+			svg {
+				fill: $font-color-additional;
+			}
+		}
+	}
+
+	&-rating-area:not(:checked) > label:hover,
+	&-rating-area:not(:checked) > label:hover ~ label {
+		svg {
+			fill: $font-color-additional;
+		}
+	}
+
+	&-rating-area > input:checked + label:hover,
+	&-rating-area > input:checked + label:hover ~ label,
+	&-rating-area > input:checked ~ label:hover,
+	&-rating-area > input:checked ~ label:hover ~ label,
+	&-rating-area > label:hover ~ input:checked ~ label {
+		svg {
+			fill: $font-color-additional;
+		}
+	}
+
+	&-rate-area > label:active {
+		position: relative;
+	}
+
+
+
+// ------------------------
+
+
+
+	/* noUiSlider styles */
+	
+	// .noUi-tooltip {
+	// 	display: none;
+	// }
+	// .noUi-active .noUi-tooltip {
+	// 	display: block;
+	// }
+	
+	
+// --------------------------
+
+}
+
+.noUi-target {
+	border: none;
+	background: $disabled-element;
+	box-shadow: none;
+}
+
+.noUi-horizontal {
+	height: 2px;
+}
+.noUi-connect {
+	background: $font-color-additional;
+}
+.noUi-horizontal .noUi-handle {
+	top: -20px;
+	width: 42px;
+	height: 42px;
+	border-radius: 50%;
+	background-color: $yellow;
+	border: 2px solid $font-color-additional;
+}
+.noUi-handle {
+	box-shadow: none;
+}
+.noUi-handle:after {
+	display: none;
+}
+.noUi-handle:before {
+    position: absolute;
+    top: 12px;
+	// left: 11px;
+	left: 50%;
+	transform: translateX(-50%);
+    width: 16px;
+    height: 10px;
+    content: url('../img/handle.svg');
+    background: transparent;
+}
+
+.noUi-handle:focus {
+	outline: none;
+}
