@@ -17,7 +17,7 @@
 		<div class="container">
 			
 			<h1 class="calc-title">Фильтр результатов</h1>
-			<form class="form" method="POST">
+			<form class="form" method="POST" id="form">
 				<div class="form-wrapper">
 					<div class="form-fieldset-wrapper">
 						<fieldset class="form-fieldset form-fieldset-price">
@@ -85,7 +85,7 @@
 					<div class="form-fieldset-wrapper">
 						<fieldset class="form-fieldset form-fieldset-rating">
 							<legend class="form-legend">Рейтинг пчел</legend>
-							<div class="form-rating-area">
+							<div class="form-rating-area rating-area">
 								<input class="form-rating-input" type="radio" id="star-5" name="rating" value="5">
 								<label class="form-rating-label" for="star-5" title="5">
 									<svg>
@@ -170,7 +170,7 @@
 					<div class="form-fieldset-wrapper">
 						<fieldset class="form-fieldset form-fieldset-bee-abdomen-hairiness">
 							<legend class="form-legend">Волосатость брюшка пчелы</legend>
-							<select class="my_select_box" data-placeholder="Выбрать брюшко пчелы" multiple>
+							<select class="form-select-box" data-placeholder="Выбрать брюшко пчелы" multiple>
 								<option value="bigIndianBee">Большая индийская пчела</option>
 								<option value="honeyBee">Медоносная пчела</option>
 								<option value="indianBee">Индийская пчела</option>
@@ -244,8 +244,8 @@
 						</fieldset>
 					</div>
 					<div class="form-buttons-wrapper">
-						<button class="form-button" type="submit">Записать</button>
-						<button class="form-button" type="reset">Сбросить</button>
+						<button class="form-button" type="submit" id="submitBtn">Записать</button>
+						<button class="form-button" type="reset" id="resetBtn">Сбросить</button>
 					</div>
 				</div>
 			</form>
@@ -361,6 +361,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> -->
 	<script src="./assets/libs/nouislider.min.js"></script>
+	<script src="./assets/libs/chosen.jquery.min.js"></script>
 	<script src="js/bundle.js"></script>
 </body>
 </html>

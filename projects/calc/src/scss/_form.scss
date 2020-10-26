@@ -1,6 +1,5 @@
 .form {
 	
-
 	&-wrapper {}
 
 	&-fieldset-wrapper {
@@ -53,9 +52,9 @@
 		}
 	}
 
-	&-slider {
+	// Slider Price
 
-	}
+	&-slider {}
 
 	&-slider-prices {
 		margin-bottom: 44px;
@@ -87,6 +86,8 @@
 		transform: translateX(6%);
 	}
 
+
+	// Checkboxes. Kind of bees
 	&-checkbox-wrapper:not(:last-child) {
 		margin-bottom: 8px;
 	}
@@ -137,6 +138,68 @@
 		}
 	}
 
+
+	//  Star Rating
+	&-rating-area {
+		overflow: hidden;
+		width: 150px;
+		margin-right: auto;
+	}
+
+	&-rating-label {
+		margin-left: 4px;
+
+		&:last-child {
+			margin-left: 0;
+		}
+
+		svg {
+			width: 26px;
+			height: 26px;
+		}
+	}
+
+	&-rating-area:not(:checked) > input {
+		display: none;
+	}
+
+	&-rating-area:not(:checked) > label {
+		float: right;
+		width: 26px;
+		height: 26px;
+	}
+
+	&-rating-area:not(:checked) > label svg {
+		fill: $disabled-element;
+	}
+
+	&-rating-area > input:checked ~ label svg{
+		fill: $font-color-additional;
+	}
+
+	&-rating-area:not(:checked) > label:hover,
+	&-rating-area:not(:checked) > label:hover ~ label {
+		svg {
+			fill: $font-color-additional;
+		}
+	}
+
+	&-rating-area > input:checked + label:hover,
+	&-rating-area > input:checked + label:hover ~ label,
+	&-rating-area > input:checked ~ label:hover,
+	&-rating-area > input:checked ~ label:hover ~ label,
+	&-rating-area > label:hover ~ input:checked ~ label {
+		svg {
+			fill: $font-color-additional;
+		}
+	}
+
+	&-rating-area > label:active {
+		position: relative;
+	}
+
+
+	//  Radio-buttons. Manufacturer
 	&-radio-wrapper:not(:last-child) {
 		margin-bottom: 16px;
 	}
@@ -194,6 +257,11 @@
 		display: block;
 	}
 
+	// Select multiple. Bees abdomen hairing
+
+
+
+	//  Checkboxes. Type of clothing
 	&-type-of-clothing-wrapper {
 		@include flex;
 	}
@@ -267,6 +335,8 @@
 		background-color: $clothes-bg;
 	}
 
+
+	//  Form buttons
 	&-buttons-wrapper {
 		padding-top: 58px;
 		padding-bottom: 60px;
@@ -293,116 +363,5 @@
 		}
 	}
 
-	&-rating-area {
-		// width: 154px;
-		@include flex(flex-end);
-		flex-direction: row-reverse;
-	}
 
-	&-rating-input {
-		display: none;
-	}
-
-	&-rating-label {
-		margin-left: 4px;
-
-		&:last-child {
-			margin-right: 0;
-		}
-
-		svg {
-			width: 26px;
-			height: 26px;
-			fill: $disabled-element;
-		}
-
-		&:hover,
-		&:hover ~ label {
-			svg {
-				fill: $font-color-additional;
-			}
-		}
-	}
-
-	&-rating-area:not(:checked) > label:hover,
-	&-rating-area:not(:checked) > label:hover ~ label {
-		svg {
-			fill: $font-color-additional;
-		}
-	}
-
-	&-rating-area > input:checked + label:hover,
-	&-rating-area > input:checked + label:hover ~ label,
-	&-rating-area > input:checked ~ label:hover,
-	&-rating-area > input:checked ~ label:hover ~ label,
-	&-rating-area > label:hover ~ input:checked ~ label {
-		svg {
-			fill: $font-color-additional;
-		}
-	}
-
-	&-rate-area > label:active {
-		position: relative;
-	}
-
-
-
-// ------------------------
-
-
-
-	/* noUiSlider styles */
-	
-	// .noUi-tooltip {
-	// 	display: none;
-	// }
-	// .noUi-active .noUi-tooltip {
-	// 	display: block;
-	// }
-	
-	
-// --------------------------
-
-}
-
-.noUi-target {
-	border: none;
-	background: $disabled-element;
-	box-shadow: none;
-}
-
-.noUi-horizontal {
-	height: 2px;
-}
-.noUi-connect {
-	background: $font-color-additional;
-}
-.noUi-horizontal .noUi-handle {
-	top: -20px;
-	width: 42px;
-	height: 42px;
-	border-radius: 50%;
-	background-color: $yellow;
-	border: 2px solid $font-color-additional;
-}
-.noUi-handle {
-	box-shadow: none;
-}
-.noUi-handle:after {
-	display: none;
-}
-.noUi-handle:before {
-    position: absolute;
-    top: 12px;
-	// left: 11px;
-	left: 50%;
-	transform: translateX(-50%);
-    width: 16px;
-    height: 10px;
-    content: url('../img/handle.svg');
-    background: transparent;
-}
-
-.noUi-handle:focus {
-	outline: none;
 }

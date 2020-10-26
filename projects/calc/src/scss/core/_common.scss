@@ -47,12 +47,14 @@ li {
 	padding: 0;
 	margin: 0;
 }
+
 button {
 	cursor: pointer;
 	border: none;
 	background-color: transparent;
-	outline: none;      
+	outline: none;
 }
+
 label {
 	cursor: pointer;
 }
@@ -66,78 +68,147 @@ label {
 }
 
 
+/* noUiSlider styles */
+.noUi-target {
+	border: none;
+	background: $disabled-element;
+	box-shadow: none;
+}
 
+.noUi-horizontal {
+	height: 2px;
+}
 
+.noUi-connect {
+	background: $font-color-additional;
+}
 
+.noUi-horizontal .noUi-handle {
+	top: -20px;
+	width: 42px;
+	height: 42px;
+	border-radius: 50%;
+	background-color: $yellow;
+	border: 2px solid $font-color-additional;
+}
 
-// Slider
-
-input[type='range'] {
-	width: 210px;
-	height: 30px;
-	overflow: hidden;
+.noUi-handle {
+	box-shadow: none;
 	cursor: pointer;
+}
+
+.noUi-handle:after {
+	display: none;
+}
+
+.noUi-handle:before {
+	position: absolute;
+	top: 12px;
+	// left: 11px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 16px;
+	height: 10px;
+	content: url('../img/handle.svg');
+	background: transparent;
+}
+
+.noUi-handle:focus {
 	outline: none;
 }
 
-input[type='range'],
-input[type='range']::-webkit-slider-runnable-track,
-input[type='range']::-webkit-slider-thumb {
-	-webkit-appearance: none;
-	appearance: none;
-	background: none;
+
+// Chosen Styles 
+.chosen-container {
+	@include text($H10);
+	height: 40px;
+
+	&:after {
+		content: url('../img/arrow-down.svg');
+		width: 10px;
+		height: 4px;
+		position: absolute;
+		top: 14px;
+		right: 15px;
+	}
 }
 
-input[type='range']::-webkit-slider-runnable-track {
-	width: 200px;
-	height: 1px;
-	background: #003D7C;
+.chosen-container-multi .chosen-choices {
+	border: none;
+	background-image: none;
+	height: 40px;
+	padding: 0 10px;
 }
 
-input[type='range']:nth-child(2)::-webkit-slider-runnable-track {
-	background: none;
+.chosen-choices:focus {
+	outline: none;
 }
 
-input[type='range']::-webkit-slider-thumb {
-	position: relative;
-	height: 15px;
-	width: 15px;
-	margin-top: -7px;
-	background: #fff;
-	border: 1px solid #003D7C;
-	border-radius: 25px;
-	z-index: 1;
+.chosen-container-multi .chosen-choices li.search-choice {
+	border: none;
+	background-color: $white;
+	background-image: none;
+	box-shadow: none;
+	margin: 14px 30px 13px 10px;
+	padding: 0 0 0 20px
 }
 
-input[type='range']:nth-child(1)::-webkit-slider-thumb {
-	z-index: 2;
+.chosen-container-multi .chosen-choices li.search-choice span {
+	@include text($H10);
 }
 
-.rangeslider {
-	position: relative;
-	height: 60px;
-	width: 210px;
-	display: inline-block;
-	margin-top: -5px;
-	margin-left: 20px;
+.chosen-container-multi .chosen-choices li.search-choice .search-choice-close {
+	background: url('../img/close-button.svg') center no-repeat;
+	width: 9px;
+	height: 10px;
+	top: 3px;
+	left: 4px;
 }
 
-.rangeslider input {
-	position: absolute;
+.chosen-container-multi .chosen-choices li.search-choice .search-choice-close:hover {
+	background-position: 0 0;
 }
 
-.rangeslider {
-	position: absolute;
+.chosen-container .chosen-drop {
+	border: none;
+	box-shadow: none;
+	margin-top: 8px;
 }
 
-.rangeslider span {
-	position: absolute;
-	margin-top: 30px;
-	left: 0;
+.chosen-container:focus {
+	outline: none;
+	box-shadow: none;
 }
 
-.rangeslider .right {
-	position: relative;
-	float: right;
-	margin-right: -5px;
+.chosen-drop:focus {
+	outline: none;
+}
+
+.chosen-container .chosen-results li {
+	font-family: inherit;
+	@include text($H10);
+}
+
+.chosen-container .chosen-results li.highlighted {
+	background-color: $white;
+	background-image: none;
+	color: $font-color-additional;
+}
+
+.chosen-container-active:focus {
+	box-shadow: none;
+}
+
+.chosen-with-drop:focus {
+	box-shadow: none;
+}
+
+.chosen-container-multi .chosen-choices li.search-field,
+.chosen-search-input.default {
+	height: 100%;
+}
+.chosen-container-multi .chosen-choices li.search-field input[type=text] {
+	height: 100%;
+	vertical-align: center;
+	font-family: inherit;
 }
