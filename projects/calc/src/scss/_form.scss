@@ -3,15 +3,14 @@
 	&-wrapper {}
 
 	&-fieldset-wrapper {
-		padding-top: 40px;
-		padding-bottom: 44px;
-		@include flex;
+		
+		@include flex-col;
 		position: relative;
 
 		&:after {
 			content: '';
-			// display: inline-block;
 			position: absolute;
+			display: none;
 			bottom: 0;
 			width: 100%;
 			height: 1px;
@@ -19,41 +18,103 @@
 			margin-top: 30px;
 			justify-self: flex-end;
 		}
+
+		@include media (801px) {
+			@include flex;
+			padding-top: 40px;
+			padding-bottom: 44px;
+
+			&:after {
+				display: block;
+			}
+		}
 	}
 
 	&-fieldset {
-		flex: 1 1 50%;
-		max-width: 50%;
+		flex: 1 1 100%;
+		max-width: 100%;
+		@include flex-col;
+
+		&:after {
+			content: '';
+			display: block;
+			min-width: 100%;
+			height: 1px;
+			background-color: $disabled-element;
+			margin-top: 45px;
+			justify-self: flex-end;
+
+			@include media (801px) {
+				display: none;
+				max-width: 100%;
+				flex-direction: row;
+			}
+		}
+
+		&-price,
+		&-kind-of-bees,
+		&-manufacturer,
+		&-rating,
+		&-manufacturer,
+		&-bee-abdomen-hairiness,
+		&-clothes {
+			width: 100%;
+		}
 
 		&-price {
-			padding-right: 60px;
+			padding-right: 0;
+			padding-top: 40px;
+
+			@include media(801px) {
+				padding-right: 60px;
+				margin-bottom: 0;
+				padding-top: 0;
+			}
 		}
 
 		&-kind-of-bees {
 			@include flex-col;
-			padding-left: 18px;
+			padding-left: 0;
+			padding-top: 40px;
+			// width: 100%;
+
+			@include media(801px) {
+				padding-left: 18px;
+				padding-top: 0;
+				
+			}
 		}
 
 		&-manufacturer {
-			padding-left: 18px;
+			padding-left: 0;
+			// width: 100%;
+			@include media(801px) {
+				padding-left: 18px;
+			}
+		}
+
+		@include media(800px) {
+			flex: 1 1 50%;
+			max-width: 50%;
 		}
 	}
 
 	&-legend {
 		@include text($H16);
 		margin-bottom: 25px;
+		padding-top: 40px;
 		
-		&-price {
-			margin-bottom: 35px;
-		}
+		// &-price {
+		// margin-bottom: 35px;
+		// }
 
 		&-clothes {
 			padding-left: 18px;
 		}
 	}
 
-	// Slider Price
 
+	// Slider Price
 	&-slider {}
 
 	&-slider-prices {
@@ -257,9 +318,6 @@
 		display: block;
 	}
 
-	// Select multiple. Bees abdomen hairing
-
-
 
 	//  Checkboxes. Type of clothing
 	&-type-of-clothing-wrapper {
@@ -362,6 +420,4 @@
 			color: $font-color-additional;
 		}
 	}
-
-
 }

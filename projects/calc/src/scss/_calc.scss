@@ -18,13 +18,25 @@
 
 	&-menu {
 		width: 60px;
-		// min-height: 100vh;
+		// width: 100%;
+		min-height: 100vh;
 		background-color: $disabled-element;
 		position: absolute;
 		left: 0;
 		top: 0;
 		bottom: 0;
 		z-index: 10;
+		transition: width 0.3s ease;
+
+		a {
+			display: none;
+		}
+
+		&.active {
+			width: 100%;
+
+			a {display: block;}
+		}
 	}
 
 	&-menu-button {
@@ -67,6 +79,44 @@
 				&:after {
 						transform: rotate(-45deg);
 				}
+			}
+		}
+	}
+
+	&-menu-content {
+		width: 100%;
+		height: 100vh;
+		@include flex(center, center);
+	}
+
+	&-menu-content-wrapper {
+		@include flex-col;
+	}
+
+	&-menu-link {
+		display: block;
+		@include text($H30, 400, $font-color-additional);
+		margin-bottom: 40px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		&:before {
+			content: '';
+			width: 100%;
+			height: 2px;
+			background-color: transparent;
+			display: block;
+			transform: translateY(20px);
+		}
+
+		&:hover,
+		&:focus {
+			color: $font-color-additional;
+			// text-decoration: line-through;
+			&:before {
+				background-color: $font-color-additional;
 			}
 		}
 	}
