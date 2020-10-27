@@ -1,43 +1,29 @@
 @mixin text($size: 18px, $weight: 400, $color: inherit) {
-    font: {
-    size: $size;
-    weight: $weight;
-    }
-    color: $color;
-    @content;
-}
-@mixin flex($justify: flex-start, $align: flex-start) {
-    display: flex;
-    flex-direction: row;
-    justify-content: $justify;
-    align-items: $align;
-}
-@mixin flex-col($justify: flex-start, $align: flex-start) {
-    display: flex;
-    flex-direction: column;
-    justify-content: $justify;
-    align-items: $align;
-}
-@mixin placeholder {
-    &::-webkit-input-placeholder {
-      @content;
-    }
-  
-    &:-moz-placeholder {
-      @content;
-    }
-  
-    &::-moz-placeholder {
-      @content;
-    }
-  
-    &:-ms-input-placeholder {
-      @content;
-    }
-  }
+	font: {
+		size: $size;
+		weight: $weight;
+	}
 
-  @mixin media($screen) {
-    @media screen and (min-width: $screen) {
-      @content;
-    }
-  }
+	color: $color;
+	@content;
+}
+
+@mixin flex($justify: flex-start, $align: flex-start) {
+	display: flex;
+	flex-direction: row;
+	justify-content: $justify;
+	align-items: $align;
+}
+
+@mixin flex-col($justify: flex-start, $align: flex-start) {
+	display: flex;
+	flex-direction: column;
+	justify-content: $justify;
+	align-items: $align;
+}
+
+@mixin media($screen) {
+	@media screen and (min-width: $screen) {
+		@content;
+	}
+}

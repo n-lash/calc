@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Таблица результатов</title>
+	<link rel="shortcut icon" type="image/x-icon" href="assets/fav/favicon.ico">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+	<section class="table">
+		<div class="calc-menu">
+			<button class="calc-menu-button" type="button">
+				<span></span>
+			</button>
+			<div class="calc-menu-content">
+				<div class="calc-menu-content-wrapper">
+					<a class="calc-menu-link" href="/">Фильтр результатов</a>
+					<a class="calc-menu-link" href="table.html">Таблица данных</a>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<h1 class="table-title">Таблица данных</h1>
+			<div class="table-content-wrapper">
+				<div class="table-row table-row-head">
+					<div class="table-col table-col-1">Вид пчел</div>
+					<div class="table-col table-col-2">Волосатость</div>
+					<div class="table-col table-col-3">Одежда</div>
+					<div class="table-col table-col-4">Цена</div>
+				</div>
+				<div class="table-row">
+					<div class="table-col table-col-1">Индийская пчела</div>
+					<div class="table-col table-col-2">Индийская пчела</div>
+					<div class="table-col table-col-3">
+						<svg>
+							<use xlink:href="img/sprite.svg#clothes-1"></use>
+						</svg>
+					</div>
+					<div class="table-col table-col-4"><span>70</span> <span>$</span></div>
+				</div>
+				<div class="table-row">
+					<div class="table-col table-col-1">Арликовая пчела</div>
+					<div class="table-col table-col-2">Арликовая пчела</div>
+					<div class="table-col table-col-3">
+						<svg>
+							<use xlink:href="img/sprite.svg#clothes-1"></use>
+						</svg>
+					</div>
+					<div class="table-col table-col-4"><span>1000</span> <span>$</span></div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="./assets/libs/nouislider.min.js"></script>
+	<script src="./assets/libs/chosen.jquery.min.js"></script>
+	<script src="js/bundle.js"></script>
+</body>
+
+</html>

@@ -18,7 +18,6 @@
 
 	&-menu {
 		width: 60px;
-		// width: 100%;
 		min-height: 100vh;
 		background-color: $disabled-element;
 		position: absolute;
@@ -35,7 +34,9 @@
 		&.active {
 			width: 100%;
 
-			a {display: block;}
+			a {
+				display: block;
+			}
 		}
 	}
 
@@ -49,7 +50,6 @@
 			width: 26px;
 			height: 1px;
 			background-color: $font-color-additional;
-			// position: relative;
 
 			&:before,
 			&:after {
@@ -58,7 +58,6 @@
 				height: 1px;
 				background-color: $font-color-additional;
 				display: block;
-				// position: absolute;
 				transition: transform 0.3s ease;
 
 			}

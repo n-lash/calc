@@ -76,7 +76,6 @@
 			@include flex-col;
 			padding-left: 0;
 			padding-top: 40px;
-			// width: 100%;
 
 			@include media(801px) {
 				padding-left: 18px;
@@ -87,7 +86,6 @@
 
 		&-manufacturer {
 			padding-left: 0;
-			// width: 100%;
 			@include media(801px) {
 				padding-left: 18px;
 			}
@@ -103,15 +101,12 @@
 		@include text($H16);
 		margin-bottom: 25px;
 		padding-top: 40px;
-		
-		// &-price {
-		// margin-bottom: 35px;
-		// }
 
 		&-clothes {
 			padding-left: 18px;
 		}
 	}
+
 
 
 	// Slider Price
@@ -136,9 +131,17 @@
 		height: 40px;
 		background-color: $white;
 		margin-right: 35px;
+		position: relative;
 
 		&:last-child {
 			margin-right: 0;
+		}
+
+		&:after {
+			content: '$';
+			display: inline-block;
+			position: absolute;
+			right: 15px;
 		}
 	}
 
@@ -146,6 +149,7 @@
 		max-width: 91%;
 		transform: translateX(6%);
 	}
+
 
 
 	// Checkboxes. Kind of bees
@@ -260,6 +264,7 @@
 	}
 
 
+
 	//  Radio-buttons. Manufacturer
 	&-radio-wrapper:not(:last-child) {
 		margin-bottom: 16px;
@@ -267,7 +272,7 @@
 
 	&-radio-label {
 		@include flex(flex-start, center);
-		// color: $disabled-element;
+
 		&:hover {
 			.form-radio-description {
 				svg {
@@ -317,6 +322,7 @@
 	&-radio-input:checked + .form-radio-label .form-radio-element svg {
 		display: block;
 	}
+
 
 
 	//  Checkboxes. Type of clothing
@@ -394,6 +400,7 @@
 	}
 
 
+	
 	//  Form buttons
 	&-buttons-wrapper {
 		padding-top: 58px;
